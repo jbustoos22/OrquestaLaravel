@@ -9,10 +9,19 @@ use App\Models\Profesor;
 
 class NotaController extends Controller
 {
+    
     public function index()
     {
-        $notas = Nota::all(); // Obtener todos los registros de la tabla 'notas'
+        $rango = Auth::user()->rango;
+        if ($rango == "Administrador") {
+            $notas = Nota::all(); // Obtener todos los registros de la tabla 'notas'
+    
+            return view('estudiantes.notas', compact('notas'));
+        }
 
+        $profesor = Auth::user()->name . ' ' . Auth::user()->lastname;
+        $notas = Nota::all()->where('profesor', $profesor); // Obtener todos los registros de la tabla 'notas'
+    
         return view('estudiantes.notas', compact('notas'));
     }
     function findAllProf()
