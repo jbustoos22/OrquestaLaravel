@@ -1,0 +1,52 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+select.custom-select {
+    width: 200px;
+    height: 35px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+button {
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+th, td {
+    padding: 8px;
+}
+
+td {
+    background-color: #fff;
+}
+
+td[contenteditable='true'] {
+    background-color: #f9f9f9;
+}
+
+td[contenteditable='true']:focus {
+    background-color: #fff;
+}
